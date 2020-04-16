@@ -52,7 +52,7 @@ public class MainPageStepDef {
         actions.clickAndHold(mainPage.draggableSquare).moveToElement(mainPage.droppableSquare).perform();
         actions.release(mainPage.draggableSquare).perform();
         String expectedtext = "Dropped!";
-        Thread.sleep(3000);
+
         String actualtext = mainPage.dropVerification.getText();
         Assert.assertEquals(actualtext,expectedtext);
 
