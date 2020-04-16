@@ -52,7 +52,7 @@ formatter.match({
   "location": "MainPageStepDef.user_drag_and_drop()"
 });
 formatter.result({
-  "error_message": "org.junit.ComparisonFailure: expected:\u003cDrop[ here]\u003e but was:\u003cDrop[ped!]\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:115)\r\n\tat org.junit.Assert.assertEquals(Assert.java:144)\r\n\tat testSteps.MainPageStepDef.user_drag_and_drop(MainPageStepDef.java:56)\r\n\tat ✽.User drag and drop(src/test/resources/features/toolsqa.feature:7)\r\n",
+  "error_message": "org.junit.ComparisonFailure: expected:\u003cDrop[ped!]\u003e but was:\u003cDrop[ here]\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:115)\r\n\tat org.junit.Assert.assertEquals(Assert.java:144)\r\n\tat testSteps.MainPageStepDef.user_drag_and_drop(MainPageStepDef.java:57)\r\n\tat ✽.User drag and drop(src/test/resources/features/toolsqa.feature:7)\r\n",
   "status": "failed"
 });
 });

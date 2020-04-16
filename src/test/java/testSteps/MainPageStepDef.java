@@ -47,13 +47,13 @@ public class MainPageStepDef {
     }
 
     @Then("User drag and drop")
-    public void user_drag_and_drop() throws InterruptedException{
+    public void user_drag_and_drop() {
 
         actions.clickAndHold(mainPage.draggableSquare).moveToElement(mainPage.droppableSquare).perform();
         String expectedtext = "Dropped!";
-        Thread.sleep(3000);
         String actualtext = mainPage.dropVerification.getText();
-        Assert.assertEquals(actualtext,expectedtext);
+
+        Assert.assertEquals(expectedtext,actualtext);
 
 
 
