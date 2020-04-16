@@ -50,6 +50,7 @@ public class MainPageStepDef {
     public void user_drag_and_drop() throws InterruptedException{
 
         actions.clickAndHold(mainPage.draggableSquare).moveToElement(mainPage.droppableSquare).perform();
+        actions.release(mainPage.draggableSquare).perform();
         String expectedtext = "Dropped!";
         Thread.sleep(3000);
         String actualtext = mainPage.dropVerification.getText();
