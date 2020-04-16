@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class MainPage {
+public class DragAndDrop {
 
-    public MainPage(){
+    public DragAndDrop(){
       PageFactory.initElements(Driver.getDriver(),this);
     }
 

@@ -2,19 +2,14 @@ package testSteps;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.mainPage.MainPage;
+import pages.mainPage.DragAndDrop;
 import utilities.Config;
 import utilities.Driver;
 
-import java.util.concurrent.TimeUnit;
-
-public class MainPageStepDef {
-    MainPage mainPage = new MainPage();
+public class DragAndDrop_Steps {
+    DragAndDrop dragAndDrop = new DragAndDrop();
     String mainHandle;
     Actions actions = new Actions(Driver.getDriver());
 
@@ -29,8 +24,8 @@ public class MainPageStepDef {
     @Then("Reaches to Basic Sites")
     public void reaches_to_Basic_Sites() {
 
-        actions.moveToElement(mainPage.demoSites).perform();
-        mainPage.basicDemoSites.click();
+        actions.moveToElement(dragAndDrop.demoSites).perform();
+        dragAndDrop.basicDemoSites.click();
 
     }
 
@@ -42,18 +37,20 @@ public class MainPageStepDef {
                 //System.out.println(handle);try this also in the loop
             }
         }
-        mainPage.droppable.click();
+        dragAndDrop.droppable.click();
 
     }
 
     @Then("User drag and drop")
     public void user_drag_and_drop() throws InterruptedException{
 
-        actions.clickAndHold(mainPage.draggableSquare).moveToElement(mainPage.droppableSquare).perform();
-        actions.release(mainPage.draggableSquare).perform();
-        String expectedtext = "Dropped!";
 
-        String actualtext = mainPage.dropVerification.getText();
+      //  actions.clickAndHold(mainPage.draggableSquare).moveToElement(mainPage.droppableSquare).perform();
+       // actions.release(mainPage.draggableSquare).perform();
+
+        actions.dragAndDrop(dragAndDrop.draggableSquare, dragAndDrop.droppableSquare).perform();
+        String expectedtext = "Dropped!";
+        String actualtext = dragAndDrop.dropVerification.getText();
         Assert.assertEquals(actualtext,expectedtext);
 
 

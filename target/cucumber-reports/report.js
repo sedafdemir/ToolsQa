@@ -1,16 +1,16 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/features/toolsqa.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/features/sortable.feature");
 formatter.feature({
-  "name": "Reaching out to drag and drop menu and did",
+  "name": "Reaching out to sortable menu and did",
   "description": "",
   "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "User should be able to drag and drop",
+  "name": "User should be able to sort the elements",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@drag"
+      "name": "@sort"
     }
   ]
 });
@@ -19,7 +19,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.match({
-  "location": "MainPageStepDef.user_gets_url()"
+  "location": "DragAndDrop_Steps.user_gets_url()"
 });
 formatter.result({
   "status": "passed"
@@ -29,30 +29,29 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "MainPageStepDef.reaches_to_Basic_Sites()"
+  "location": "DragAndDrop_Steps.reaches_to_Basic_Sites()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User Click droppable",
+  "name": "User Click sortable",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "MainPageStepDef.user_Click_droppable()"
+  "location": "Sortable_Steps.user_Click_sortable()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User drag and drop",
+  "name": "User sortss the elements",
   "keyword": "And "
 });
 formatter.match({
-  "location": "MainPageStepDef.user_drag_and_drop()"
+  "location": "Sortable_Steps.user_sortss_the_elements()"
 });
 formatter.result({
-  "error_message": "org.junit.ComparisonFailure: expected:\u003cDrop[ here]\u003e but was:\u003cDrop[ped!]\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:115)\r\n\tat org.junit.Assert.assertEquals(Assert.java:144)\r\n\tat testSteps.MainPageStepDef.user_drag_and_drop(MainPageStepDef.java:56)\r\n\tat ✽.User drag and drop(src/test/resources/features/toolsqa.feature:7)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
 });
