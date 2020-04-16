@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class MainPageStepDef {
     MainPage mainPage = new MainPage();
     String mainHandle;
-
+    Actions actions = new Actions(Driver.getDriver());
 
     @Given("User gets url")
     public void user_gets_url() {
@@ -25,9 +25,9 @@ public class MainPageStepDef {
     }
 
 
+
     @Then("Reaches to Basic Sites")
     public void reaches_to_Basic_Sites() {
-        Actions actions = new Actions(Driver.getDriver());
 
         actions.moveToElement(mainPage.demoSites).perform();
         mainPage.basicDemoSites.click();
@@ -47,14 +47,14 @@ public class MainPageStepDef {
     }
 
     @Then("User drag and drop")
-    public void user_drag_and_drop() {
-        Actions actions = new Actions(Driver.getDriver());
+    public void user_drag_and_drop() throws InterruptedException{
 
         actions.clickAndHold(mainPage.draggableSquare).moveToElement(mainPage.droppableSquare).perform();
+        actions.release(mainPage.draggableSquare).perform();
         String expectedtext = "Dropped!";
-        String actualtext = mainPage.dropVerification.getText();
 
-        Assert.assertEquals(expectedtext,actualtext);
+        String actualtext = mainPage.dropVerification.getText();
+        Assert.assertEquals(actualtext,expectedtext);
 
 
 
