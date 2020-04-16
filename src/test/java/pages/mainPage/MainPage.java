@@ -19,11 +19,11 @@ public class MainPage {
     public WebElement basicDemoSites;
     @FindBy(xpath = "(//a[contains(text(),'Droppable')])[1]")
     public WebElement droppable;
-    @FindBy(xpath = "//a[.='Droppable']")
+    @FindBy(xpath = "//div[@id='draggable']")
     public WebElement draggableSquare;
     @FindBy(xpath = "//div[@id='droppable']")
     public WebElement droppableSquare;
-    @FindBy (xpath = "//div[@class='ui-widget-header ui-droppable ui-state-highlight']//p")
+    @FindBy (xpath = "//div[@id='droppable']/p")
     public WebElement dropVerification;
 
 
