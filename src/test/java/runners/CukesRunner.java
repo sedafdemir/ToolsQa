@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/",
         glue = "testSteps",
         dryRun = false,
-        tags = "@sort"
+        tags = "@dropdown"
 )
 
 public class CukesRunner {
