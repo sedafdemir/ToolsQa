@@ -2,6 +2,7 @@ package testSteps;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import io.restassured.internal.common.assertion.Assertion;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Assert;
@@ -57,7 +58,6 @@ public class SmartBearOrder_Steps {
 //        orderPage.expirationDateInput.sendKeys(sheet.getRow(1).getCell(8).toString());
         orderPage.expirationDateInput.sendKeys("03/24");
         orderPage.processButton.click();
-
 
 
 
